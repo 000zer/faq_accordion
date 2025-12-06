@@ -1,0 +1,239 @@
+/* ==========================================
+   IMPORTS
+========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+
+/* ==========================================
+   CSS VARIABLES
+========================================== */
+:root {
+    /* Colors */
+    --white: hsl(0, 100%, 100%);
+    --purple-100: hsl(275, 100%, 97%);
+    --purple-600: hsl(292, 16%, 49%);
+    --purple-700: hsla(281, 83%, 54%, 1);
+    --purple-950: hsl(292, 42%, 14%);
+}
+
+
+/* ==========================================
+   GLOBAL RESET
+========================================== */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ==========================================
+   BODY STYLES
+========================================== */
+body {
+    /* Box Model */
+    box-sizing: border-box;
+    height: 100%;
+    min-height: 100vh;
+    padding: 0;
+    
+    /* Typography */
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--purple-600);
+    letter-spacing: 0;
+    line-height: 1.2;
+    
+    /* Layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    /* Background */
+    background-color: var(--purple-100);
+    background-image: url('../assets/images/background-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
+}
+
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+.container {
+    width: calc(100% - 40px);
+    max-width: 600px;
+    padding: 40px;
+    margin-top: auto;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ==========================================
+   HEADER SECTION
+========================================== */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 36px;
+}
+
+.header-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.header-title {
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--purple-950);
+}
+
+
+/* ==========================================
+   FAQ ACCORDION SECTION
+========================================== */
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+/* ==========================================
+   FAQ ITEM CONTAINER
+========================================== */
+.faq-question-container {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--purple-100);
+}
+
+.faq-question-container:last-child {
+    border-bottom: none;
+}
+
+
+/* ==========================================
+   FAQ QUESTION BUTTON
+========================================== */
+.faq-question-header {
+    /* Reset Button Styles */
+    width: 100%;
+    background: none;
+    border: none;
+    
+    /* Layout */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* Interaction */
+    cursor: pointer;
+}
+
+.faq-question-header:hover {
+    color: var(--purple-700);
+}
+
+.faq-question-title {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    color: var(--purple-950);
+}
+
+
+/* ==========================================
+   FAQ ICON
+========================================== */
+.faq-icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+/* Icon rotation when accordion is open */
+.faq-question-header[aria-expanded="true"] .faq-icon {
+    transform: rotate(45deg);
+}
+
+
+/* ==========================================
+   FAQ ANSWER
+========================================== */
+.faq-answer {
+    display: none;
+    margin-top: 24px;
+    line-height: 1.5;
+    color: var(--purple-600);
+}
+
+/* Show answer when accordion is open */
+.faq-answer.active {
+    display: block;
+}
+
+
+/* ==========================================
+   FOOTER ATTRIBUTION
+========================================== */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+/* ==========================================
+   MEDIA QUERIES - MOBILE
+========================================== */
+@media (max-width: 450px) {
+    /* Body - Mobile Background */
+    body {
+        background-image: url('../assets/images/background-pattern-mobile.svg');
+    }
+    
+    /* Container - Mobile Sizing */
+    .container {
+        width: calc(100% - 20px);
+        padding: 20px;
+    }
+    
+    /* Header - Mobile Sizing */
+    .header-logo {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .header-title {
+        font-size: 32px;
+    }
+    
+    /* FAQ Question - Mobile Typography */
+    .faq-question-title {
+        font-size: 16px;
+    }
+    
+    /* FAQ Answer - Mobile Typography */
+    .faq-answer {
+        font-size: 14px;
+    }
+    
+    /* FAQ Icon - Mobile Sizing */
+    .faq-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
