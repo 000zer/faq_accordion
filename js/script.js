@@ -1,11 +1,3 @@
-/* ==========================================
-   FAQ ACCORDION FUNCTIONALITY
-========================================== */
-
-/**
- * Initialize FAQ accordion functionality
- * Handles opening/closing of FAQ items
- */
 
 // ==========================================
 // SELECT ALL FAQ QUESTION BUTTONS
@@ -25,17 +17,9 @@ faqQuestions.forEach(question => {
     // Get the icon element using class selector
     const icon = question.querySelector('.faq-icon');
     
-    // Check if answer is currently visible
-    const isExpanded = question.getAttribute('aria-expanded') === 'true';
-    
-    
     // ======================================
     // TOGGLE ACCORDION STATE
     // ======================================
-    
-    // Toggle aria-expanded attribute for accessibility
-    question.setAttribute('aria-expanded', !isExpanded);
-    
     // Toggle answer visibility using class
     answer.classList.toggle('active');
     
