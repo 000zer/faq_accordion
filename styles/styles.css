@@ -201,7 +201,7 @@ body {
 /* ==========================================
    MEDIA QUERIES - MOBILE
 ========================================== */
-@media (max-width: 6.667rem) {
+@media (max-width: 32.5rem) {
     /* Body - Mobile Background */
     body {
         background-image: url('../assets/images/background-pattern-mobile.svg');
@@ -238,4 +238,5 @@ body {
         width: 1.5rem;
         height: 1.5rem;
     }
+
 }
