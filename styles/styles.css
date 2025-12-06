@@ -157,12 +157,6 @@ body {
 .faq-icon {
     width: 30px;
     height: 30px;
-    transition: transform 0.3s ease;
-}
-
-/* Icon rotation when accordion is open */
-.faq-question-header[aria-expanded="true"] .faq-icon {
-    transform: rotate(45deg);
 }
 
 
@@ -236,4 +230,5 @@ body {
         width: 24px;
         height: 24px;
     }
+
 }
